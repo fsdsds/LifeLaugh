@@ -29,7 +29,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        sp =
         initData(savedInstanceState);
         isFirst = false;
     }
