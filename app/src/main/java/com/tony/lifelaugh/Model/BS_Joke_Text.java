@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by tony on 2016/9/20.
  */
-public class BS_Joke {
+public class BS_Joke_Text {
 
     private int showapi_res_code;
     private String showapi_res_error;

@@ -1,6 +1,6 @@
 package com.tony.lifelaugh.Base;
 
-import android.content.SharedPreferences;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.androidlib.tony.ResofitUtils.ServiceGenerator;
+import com.cundong.recyclerview.LRecyclerView;
 import com.tony.lifelaugh.Config.LFLConfig;
 import com.tony.lifelaugh.RetrofitService.QueryJsonService;
 
@@ -19,12 +20,16 @@ public abstract class BaseFragment extends Fragment {
 
     public boolean isFirst = true;
     public QueryJsonService service;
-    public SharedPreferences sp;
+    public Activity mActivity;
+    public LRecyclerView mLRecyclerView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mActivity = getActivity();
         return initView(inflater);
     }
+
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

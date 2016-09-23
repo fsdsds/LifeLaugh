@@ -14,7 +14,7 @@ import com.tony.lifelaugh.LFLComic.ComicFragment;
 import com.tony.lifelaugh.LFLHelpLife.HelpLifeFragment;
 import com.tony.lifelaugh.LFLJoke.JokeFragment;
 import com.tony.lifelaugh.LFLPicture.PictureFragment;
-import com.tony.lifelaugh.Model.BS_Joke;
+import com.tony.lifelaugh.Model.BS_Joke_Text;
 import com.tony.lifelaugh.R;
 import com.tony.lifelaugh.RetrofitService.QueryJsonService;
 
@@ -123,8 +123,8 @@ public class MainActivity extends BaseActivity {
         ServiceGenerator.initBuild(LFLConfig.BaseUrl);
         QueryJsonService service = ServiceGenerator.createService(QueryJsonService.class);
 
-        Observable<BS_Joke> observable = service.getJoke("24712", "5e6095daf6ab4551900cc5c683f2e6e0", "1", "29");
-        observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<BS_Joke>() {
+        Observable<BS_Joke_Text> observable = service.getJoke("24712", "5e6095daf6ab4551900cc5c683f2e6e0", "1", "29");
+        observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<BS_Joke_Text>() {
             @Override
             public void onCompleted() {
                 Log.i("Observable", "onCompleted");
@@ -136,7 +136,7 @@ public class MainActivity extends BaseActivity {
             }
 
             @Override
-            public void onNext(BS_Joke bs_joke) {
+            public void onNext(BS_Joke_Text bs_joke) {
                 Log.i("Observable", "title:" + bs_joke.getShowapi_res_body().getPagebean().getContentlist().get(0).getText());
             }
         });

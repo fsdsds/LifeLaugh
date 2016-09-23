@@ -1,6 +1,6 @@
 package com.tony.lifelaugh.RetrofitService;
 
-import com.tony.lifelaugh.Model.BS_Joke;
+import com.tony.lifelaugh.Model.BS_Joke_Text;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -12,8 +12,8 @@ import rx.Observable;
 public interface QueryJsonService {
 
 
-    @GET("255-1")
-    Observable<BS_Joke> getJoke(@Query("showapi_appid") String id, @Query("showapi_sign") String sign
-    ,@Query("page") String page,@Query("type") String type);
+    @GET("255-1")//https://route.showapi.com/255-1?showapi_appid=24712&showapi_sign=5e6095daf6ab4551900cc5c683f2e6e0&page=1&type=29
+    Observable<BS_Joke_Text> getJoke(@Query("showapi_appid") String id, @Query("showapi_sign") String sign
+    , @Query("page") String page, @Query("type") String type);
 
 }

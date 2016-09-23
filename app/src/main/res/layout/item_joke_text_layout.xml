@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@android:color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        >
+
+        <com.tony.lifelaugh.Widget.CircleImageView
+            android:id="@+id/img_touxiang"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            app:layout_collapseMode="parallax"
+            fresco:roundAsCircle="true"
+            fresco:roundedCornerRadius="40dp" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:layout_toRightOf="@id/img_touxiang"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/item_title_color"
+            android:text="dd"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:layout_below="@id/tv_name"
+            android:layout_toRightOf="@id/img_touxiang"
+            android:layout_marginLeft="10dp"
+            android:text="2016-09-22 22:56:02"
+            android:textColor="@color/item_title_color"
+            android:textSize="11sp"
+            />
+        <ImageView
+            android:id="@+id/img_share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/share"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="儿子问爸爸：我为什么要读书？ 爸爸回答说：我这么跟你说吧！你读了书，喝这款茶的时候就会说：“此茶口感饱满纯正，入口即化圆润如诗，随之而来的是持久迅猛的回甘，茶汤橙黄透亮，幽香如兰，韵味十足，是难得一见的茶中佳品！” 而你没读书就会说：“卧槽，好喝！真TM的太好喝！"
+            android:textColor="@color/item_content_color"
+            android:textSize="16sp"
+            android:textScaleX="0.5"
+            android:lineSpacingExtra="1dp"
+            android:lineSpacingMultiplier="1.5"
+            />
+    </RelativeLayout>
+</LinearLayout>
