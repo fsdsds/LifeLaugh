@@ -9,7 +9,7 @@ import android.widget.RadioGroup;
 import com.androidlib.tony.ResofitUtils.ServiceGenerator;
 import com.tony.lifelaugh.Base.BaseActivity;
 import com.tony.lifelaugh.Base.BaseFragment;
-import com.tony.lifelaugh.Config.Config;
+import com.tony.lifelaugh.Config.LFLConfig;
 import com.tony.lifelaugh.LFLComic.ComicFragment;
 import com.tony.lifelaugh.LFLHelpLife.HelpLifeFragment;
 import com.tony.lifelaugh.LFLJoke.JokeFragment;
@@ -120,7 +120,7 @@ public class MainActivity extends BaseActivity {
 
     public void getJokeData() {
 
-        ServiceGenerator.initBuild(Config.BaseUrl);
+        ServiceGenerator.initBuild(LFLConfig.BaseUrl);
         QueryJsonService service = ServiceGenerator.createService(QueryJsonService.class);
 
         Observable<BS_Joke> observable = service.getJoke("24712", "5e6095daf6ab4551900cc5c683f2e6e0", "1", "29");

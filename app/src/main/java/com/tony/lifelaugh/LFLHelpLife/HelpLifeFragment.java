@@ -33,9 +33,5 @@ public class HelpLifeFragment extends BaseFragment {
 
     }
 
-    @Override
-    protected boolean lazyLoad() {
-        tv.setText("漫画漫画漫画漫画");
-        return false;
-    }
+
 }

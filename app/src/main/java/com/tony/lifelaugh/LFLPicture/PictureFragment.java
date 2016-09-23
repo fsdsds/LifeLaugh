@@ -33,9 +33,5 @@ public class PictureFragment extends BaseFragment{
 
     }
 
-    @Override
-    protected boolean lazyLoad() {
-        tv.setText("图片图片图片图片");
-        return false;
-    }
+
 }

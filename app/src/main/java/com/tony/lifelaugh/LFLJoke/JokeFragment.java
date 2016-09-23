@@ -160,8 +160,4 @@ public class JokeFragment extends BaseFragment {
 
     }
 
-    @Override
-    protected boolean lazyLoad() {
-        return false;
-    }
 }

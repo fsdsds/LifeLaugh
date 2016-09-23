@@ -1,5 +1,6 @@
 package com.tony.lifelaugh.Base;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,13 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.androidlib.tony.ResofitUtils.ServiceGenerator;
+import com.tony.lifelaugh.Config.LFLConfig;
+import com.tony.lifelaugh.RetrofitService.QueryJsonService;
+
 /**
  * Created by tony on 2016/9/21.
  */
 public abstract class BaseFragment extends Fragment {
 
-    public boolean isVisible = false;
     public boolean isFirst = true;
+    public QueryJsonService service;
+    public SharedPreferences sp;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -23,33 +29,23 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        sp =
         initData(savedInstanceState);
+        isFirst = false;
     }
 
     public abstract View initView(LayoutInflater inflater);
 
     public abstract void initData(Bundle savedInstanceState);
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if(getUserVisibleHint()) {
+    public void getDataFromSp(){
 
-            isVisible = true;
-            onVisible();
-        } else {
-            isVisible = false;
-            onInvisible();
+    }
+
+    public void getDataFromNet(){
+        ServiceGenerator.initBuild(LFLConfig.BaseUrl);
+        if(service == null) {
+            service = ServiceGenerator.createService(QueryJsonService.class);
         }
     }
-    protected void onVisible(){
-        //TODO 第一次加载fragment时缓存数据，不用每次都要加载数据
-            if(lazyLoad()){
-                isFirst = false;
-            }
-    }
-
-    protected abstract boolean lazyLoad();
-
-    protected void onInvisible(){}
 }

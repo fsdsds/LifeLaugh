@@ -1,6 +1,7 @@
 package com.tony.lifelaugh.LFLJoke;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -25,26 +26,32 @@ public class JokeVideoFragment extends BaseFragment {
     @Override
     public View initView(LayoutInflater inflater) {
         tv = new TextView(getActivity());
-        isPrepare = true;
-        lazyLoad();
         return tv;
     }
 
     @Override
     public void initData(Bundle savedInstanceState) {
+        Log.i("initData","JokeVideoFragment-isFirst:"+isFirst);
+        if(isFirst){
+            tv.setText("视频");
+            getDataFromNet();
+        }else{
+            tv.setText("第二次视频");
+            getDataFromSp();
+        }
     }
 
     @Override
-    protected boolean lazyLoad() {
-        if(!isPrepare || !isVisible){
-            return false;
-        }
+    public void getDataFromNet() {
+        super.getDataFromNet();
+        //TODO 获取网络数据
 
-        if(isFirst){
-            tv.setText("视频");
-        }else{
-            tv.setText("第二次视频");
-        }
-        return true;
     }
+
+    @Override
+    public void getDataFromSp() {
+        super.getDataFromSp();
+        //TODO 获取缓存数据
+    }
+
 }
