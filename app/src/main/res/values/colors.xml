@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!--底部菜单选中文字颜色-->
+    <color name="DownMenuCheckFontColor">#ffba15</color>
+    <!--底部菜单未选中文字颜色-->
+    <color name="DownMenuUnCheckFontColor">#d0d1d2</color>
+    <color name="Toolbar_BgColor">#ffba1f</color>
+    <color name="DownMenuDivider">#f3f3f3</color>
+
+    <color name="tab_unselect">#ffebbf</color>
+    <color name="tab_select">#fffefd</color>
 </resources>
