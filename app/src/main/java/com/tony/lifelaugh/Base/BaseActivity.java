@@ -20,7 +20,6 @@ import com.tony.lifelaugh.R;
 public class BaseActivity extends AppCompatActivity {
 
     public EditTextUtil mEditTextUtil;
-    int a ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

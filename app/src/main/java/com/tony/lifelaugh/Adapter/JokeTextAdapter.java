@@ -1,4 +1,4 @@
-package com.tony.lifelaugh;
+package com.tony.lifelaugh.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,8 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.tony.lifelaugh.Model.BS_Joke_Text;
-import com.tony.lifelaugh.Widget.CircleImageView;
+import com.tony.lifelaugh.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +48,7 @@ public class JokeTextAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     static private class JokeTextViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tv_name,tv_time,tv_content;
-        private CircleImageView img_touxiang;
+        private SimpleDraweeView img_touxiang;
         private View view ;
         private static JokeTextViewHolder newInstence(View itemView){
             return new JokeTextViewHolder(itemView);
@@ -58,13 +59,13 @@ public class JokeTextAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             tv_name = (TextView) view.findViewById(R.id.tv_name);
             tv_time = (TextView) view.findViewById(R.id.tv_time);
             tv_content = (TextView) view.findViewById(R.id.tv_content);
-            img_touxiang = (CircleImageView) view.findViewById(R.id.img_touxiang);
+            img_touxiang = (SimpleDraweeView) view.findViewById(R.id.img_touxiang);
         }
 
         public void setItemData(BS_Joke_Text.ShowapiResBodyBean.PagebeanBean.ContentlistBean bean){
             tv_name.setText(bean.getName());
             tv_time.setText(bean.getCreate_time());
-            tv_content.setText(bean.getText());
+            tv_content.setText(bean.getText().toString().trim());
             img_touxiang.setImageURI(bean.getProfile_image());
         }
 

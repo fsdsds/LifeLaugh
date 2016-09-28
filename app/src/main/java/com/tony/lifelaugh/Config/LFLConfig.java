@@ -20,4 +20,7 @@ public class LFLConfig {
     public final static int MAXCACHESIZE = 0;
     public final static String PICCOMPRESSEDPATH = Environment.getExternalStorageDirectory() + "/LifeLaugh/image";
     public final static String APKDOWNLOADPATH = Environment.getExternalStorageDirectory() + "/LifeLaugh/file/";
+
+    public static String TAG = "LIFELAUGHLOGCAT";
+
 }

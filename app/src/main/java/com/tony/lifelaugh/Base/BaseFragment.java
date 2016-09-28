@@ -35,7 +35,6 @@ public abstract class BaseFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initData(savedInstanceState);
-        isFirst = false;
     }
 
     public abstract View initView(LayoutInflater inflater);
@@ -52,4 +51,5 @@ public abstract class BaseFragment extends Fragment {
             service = ServiceGenerator.createService(QueryJsonService.class);
         }
     }
+
 }
